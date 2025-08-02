@@ -27,3 +27,7 @@ Lista os endpoints REST disponíveis para manipulação dos produtos, permitindo
 ``PUT /produtos/{id}``  
 ``DELETE /produtos/{id}`` 
 
+### Spring Boot Application
+Este comando inicia a aplicação Spring Boot, que se conecta ao MongoDB e expõe os endpoints
+REST para manipulação dos produtos. A aplicação é executada na porta 8080.
+``mvn spring-boot:run``
