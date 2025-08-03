@@ -39,4 +39,15 @@ public class ProdutoController {
     public void deletar(@PathVariable String id) {
         repository.deleteById(id);
     }
+
+    // queries
+    @GetMapping("/query")
+    public List<Produto> buscarPorNome(
+            @RequestParam(required = false) String nome
+    ) {
+        if( nome == null || nome.isEmpty()) {
+            return repository.findAll();
+        }
+        return repository.findByNomeContainingIgnoreCase(nome);
+    }
 }
